@@ -1,12 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+
+using SchoolProSite.DAL.Entities;
+using SchoolProSite.DAL.Models;
 
 namespace SchoolProSite.DAL.Interfaces
 {
-    internal class IDaoCourse
+    public interface IDaoCourse
     {
+        void SaveCourse(Course course);
+        void UpdateCourse(Course course);
+        void RemoveCourse(Course course);
+        CourseDaoModel GetCourse(int Id);
+
+        List<CourseDaoModel> GetCourses();
+        List<CourseDaoModel> GetCourses(Func<Course, bool> filter);
+
+        bool ExistsCourse(Func<Course, bool> filter);
     }
 }
+ 
+    
+

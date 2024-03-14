@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace SchoolProSite.DAL.Core
 {
-    internal class PersonBase
+    public abstract class PersonBase : BaseEntity
     {
+        public string? LastName { get; set; }
+        public string? FirstName { get; set; }
     }
 }

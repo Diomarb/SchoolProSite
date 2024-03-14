@@ -1,12 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+
+using SchoolProSite.DAL.Entities;
 
 namespace SchoolProSite.DAL.Interfaces
 {
-    internal class IDaoDepartment
+    public interface IDaoDepartment
     {
+void SaveDepartment(Department department);
+        void UpdateDepartment(Department department);
+        void RemoveDepartment(Department department);
+        Department? GetDepartment(int id);
+        List<Department> GetDepartments();
+        bool ExistsDepartments(Func<Department,bool>filter);
+        List<Department> GetDepartments(Func<Department, bool> filter);
     }
 }

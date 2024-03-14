@@ -1,12 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using Microsoft.EntityFrameworkCore;
+using SchoolProSite.DAL.Entities;
 
 namespace SchoolProSite.DAL.Context
 {
-    internal class SchoolContext
+    public class SchoolContext : DbContext
+
     {
+        public SchoolContext(DbContextOptions<SchoolContext> options) : base(options)
+        {
+
+        }
+        #region "Entities"
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<Course> Course { get; set; }
+        public DbSet<Instructor> Instructors { get; set; }
+        public DbSet<Student> Students { get; set; }
+        public DbSet<Person> Persons { get; set; }
+        public DbSet<OnlineCourse> OnlineCourses { get; set; }
+        public DbSet<OnsiteCourse> OnsiteCourses { get; set; }
+        public DbSet<OfficeAssigment> OfficeAssignments { get; set; }
+        public DbSet<StudentGrade> StudentGrades { get; set; }
+
+        #endregion
+
+
+
+
+
+
+
     }
 }

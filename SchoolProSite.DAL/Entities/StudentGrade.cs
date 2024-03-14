@@ -1,12 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using System.ComponentModel.DataAnnotations;
 
 namespace SchoolProSite.DAL.Entities
 {
-    internal class StudentGrade
+    public partial class StudentGrade
     {
+        [Key]
+        public int EnrollmentId { get; set; }
+        public int CourseId { get; set; }
+        public int StudentId { get; set; }
+        public decimal? Grade { get; set; }
+
+        public virtual Course Course { get; set; }
+        public virtual Person Student { get; set; }
     }
 }

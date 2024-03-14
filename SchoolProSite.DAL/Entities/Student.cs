@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using SchoolProSite.DAL.Core;
 
 namespace SchoolProSite.DAL.Entities
 {
-    internal class Student
+    public partial class Student : PersonBase
     {
+        public int Id { get; set; }
+    
+        public DateTime? EnrollmentDate { get; set; }
+       
     }
 }
